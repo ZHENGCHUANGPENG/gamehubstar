@@ -17,7 +17,20 @@
     <link rel="icon" type="image/png" href="/gamehubstar-icon.png" />
     <link rel="preconnect" href="https://html5.gamemonetize.co" crossorigin />
     <link rel="preconnect" href="https://img.gamemonetize.com" crossorigin />
+    <link rel="preconnect" href="https://api.gamehubstar.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.gamehubstar.com" />
     <link rel="dns-prefetch" href="https://html5.gamemonetize.co" />
+    <script>
+      // Fire the homepage data request before the JS bundle even downloads, so the
+      // API round trip overlaps bundle download+parse. gameData.js picks up
+      // window.__bootstrapPromise instead of firing its own request.
+      // Skipped on deep-linked game pages (they don't need homepage data).
+      try {
+        if (!/^\/game\//.test(location.pathname) && !new URLSearchParams(location.search).get('game')) {
+          window.__bootstrapPromise = fetch('https://api.gamehubstar.com/api/bootstrap').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+        }
+      } catch (e) { window.__bootstrapPromise = null; }
+    </script>
     <script>
       // Prioritize the initial homepage illustration, without delaying deep-linked games.
       if (location.pathname === '/' && !location.search) {
@@ -51,7 +64,7 @@
   gtag('js', new Date());
   gtag('config', 'G-PD7HJKNP7P');
 </script>
-  <script type="module" crossorigin src="/assets/index-DsborYFJ.js"></script>
+  <script type="module" crossorigin src="/assets/index-DnC5sCjg.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-Cb2cfl4x.css">
 </head>
   <body>
