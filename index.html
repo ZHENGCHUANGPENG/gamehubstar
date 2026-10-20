@@ -19,7 +19,7 @@
     <script>
       // Prioritize the initial homepage illustration, without delaying deep-linked games.
       if (location.pathname === '/' && !location.search) {
-        for (const href of ['/home-cat-character.webp', '/home-star-character.webp', '/home-interactive-landscape.webp']) {
+        for (const href of ['/home-cat-character.webp', '/home-star-character.webp', matchMedia('(max-width:720px)').matches ? '/home-mobile-tall-sky.webp' : '/home-interactive-landscape.webp']) {
           const link = document.createElement('link');
           link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
           link.href = href; link.fetchPriority = 'high'; document.head.appendChild(link);
@@ -49,8 +49,8 @@
   gtag('js', new Date());
   gtag('config', 'G-PD7HJKNP7P');
 </script>
-  <script type="module" crossorigin src="/assets/index-BktMWlho.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-1-l-LxEh.css">
+  <script type="module" crossorigin src="/assets/index-ClWXF6uK.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DW1R4Yx4.css">
 </head>
   <body>
     <div id="root"></div>
