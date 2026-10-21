@@ -1,3 +1,15 @@
+# GameHubStar robots.txt
+# 本站所有游戏评测与描述均为原创内容。欢迎搜索引擎正常收录；
+# 未经许可，请勿整站镜像、批量抓取或复制本站内容（违者将走 DMCA 投诉）。
 User-agent: *
 Allow: /
+Crawl-delay: 2
 Sitemap: https://gamehubstar.com/sitemap.xml
+
+# 拒绝已知的内容抓取/镜像类爬虫
+User-agent: MJ12bot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
