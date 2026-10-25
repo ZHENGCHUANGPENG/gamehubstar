@@ -174,19 +174,19 @@
 .community-game-player .heavy-tip-banner{pointer-events:none}
 .community-game-player .heavy-tip-banner button{pointer-events:auto}
 .community-launch-cover .community-play-anyway{background:#fff8f0;color:#754f35;margin-top:8px;border:1px solid #d9b985;font-size:13px}
-/* In-page expanded: clean, no 100vw breakout, no viewport variables, no browser fullscreen.
-   Default (all cases): stage fills its container width, keeps its aspect, stays in flow.
-   Portrait phone + landscape game: stage rotates 90deg (CSS only) to fill the portrait
-   screen with the landscape game. Rotate the phone to landscape and the media query
-   below switches to the adaptive fill automatically (no rotate, just a big landscape box).
-   Portrait game: full-width 9:16 capped at 85dvh so it never overflows. */
-.community-game-player .player-stage--expanded{width:100%;aspect-ratio:var(--game-aspect,16/9);height:auto;position:relative}
+/* In-place expanded: NO rotate, NO fixed overlay, NO breakout, NO viewport variables.
+   Clicking the expand button ONLY toggles .player-stage--expanded on the stage.
+   The card and all outer containers stay in normal document flow; nothing pops out.
+   Portrait phone (default): stage keeps width 100% and stretches taller in place
+   (70vh for landscape games; 9:16 capped at 85dvh for portrait games). The iframe
+   fills the stage (no 960x540 scale in expanded state) so the game canvas can
+   re-adapt to the tall box after the resize event (see fullscreen.js). No transform
+   on the stage means touch coordinates stay 1:1 and focus never shifts.
+   Landscape phone: stage fills the landscape viewport, centered in flow, aspect kept. */
+.community-game-player .player-stage--expanded{width:100%;height:70vh;aspect-ratio:auto;position:relative;inset:auto;z-index:auto}
+.community-game-player[data-orientation=portrait] .player-stage--expanded{aspect-ratio:9/16;height:auto;max-height:85dvh}
 .community-game-player .player-stage--expanded .player-screen{width:100%;height:100%;position:relative;inset:auto;transform:none;aspect-ratio:inherit}
-.community-game-player[data-orientation=portrait] .player-stage--expanded{aspect-ratio:9/16;max-height:85dvh}
-@media(orientation:portrait){
-.community-game-player[data-orientation=landscape]:not([data-device=desktop]) .player-stage--expanded{position:fixed;left:50%;top:50%;width:100dvh;height:100vw;margin-left:calc(-100dvh/2);margin-top:calc(-100vw/2);transform:rotate(90deg);aspect-ratio:auto;z-index:100}
-.community-game-player[data-orientation=landscape]:not([data-device=desktop]) .player-stage--expanded .player-screen{width:100%;height:100%}
-}
+.community-game-player .player-stage--expanded .player-screen .game-frame.is-visible{display:block;width:100%!important;height:100%!important;transform:none!important}
 @media(orientation:landscape){
 .community-game-player .player-stage--expanded{width:min(100vw,calc(100dvh*16/9));height:min(100dvh,calc(100vw*9/16));margin-left:auto;margin-right:auto}
 .community-game-player[data-orientation=portrait] .player-stage--expanded{width:min(100vw,calc(100dvh*9/16));height:min(100dvh,calc(100vw*16/9));aspect-ratio:9/16}
