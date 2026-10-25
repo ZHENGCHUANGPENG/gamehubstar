@@ -1,5 +1,5 @@
-import {createFullscreen} from './community-fullscreen-7805f3f4c1.js';
-import {createViewport} from './community-viewport-53c15e90a3.js';
+import {createFullscreen} from './community-fullscreen-d022989a46.js';
+import {createViewport} from './community-viewport-2d7699e79e.js';
 import {createPlayerSession,ratioFor} from './community-player-session-f892e0c701.js';
 import {createApi,TOKEN_KEY,FAVORITES_KEY,uniqueIds,normalizeRating,gameSchema,serialQueue} from './community-client-a4074bc6ea.js';
 import {orientationOf,resolveOrientation} from './community-orientation-f8f1a831ba.js';
