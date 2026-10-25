@@ -174,9 +174,14 @@
 .community-game-player .heavy-tip-banner{pointer-events:none}
 .community-game-player .heavy-tip-banner button{pointer-events:auto}
 .community-launch-cover .community-play-anyway{background:#fff8f0;color:#754f35;margin-top:8px;border:1px solid #d9b985;font-size:13px}
-.community-game-player .player-stage--expanded .player-screen{width:min(var(--game-viewport-width,100vw),calc(var(--game-viewport-height,100dvh)*16/9));height:min(var(--game-viewport-height,100dvh),calc(var(--game-viewport-width,100vw)*9/16));inset:50% auto auto 50%;transform:translate(-50%,-50%);aspect-ratio:16/9}
-.community-game-player[data-orientation=portrait] .player-stage--expanded .player-screen{width:min(var(--game-viewport-width,100vw),calc(var(--game-viewport-height,100dvh)*9/16));height:min(var(--game-viewport-height,100dvh),calc(var(--game-viewport-width,100vw)*16/9));aspect-ratio:9/16}
-@media(pointer:coarse) and (orientation:portrait){.community-game-player:is([data-orientation=both],[data-orientation=unverified]) .player-stage--expanded .player-screen{width:min(var(--game-viewport-width,100vw),calc(var(--game-viewport-height,100dvh)*9/16));height:min(var(--game-viewport-height,100dvh),calc(var(--game-viewport-width,100vw)*16/9));aspect-ratio:9/16}}
+/* In-page expanded (no browser fullscreen, no orientation lock, no fixed body).
+   Stage stays in normal document flow so iframe focus and touch coordinates stay stable.
+   Portrait phone: full-width 16:9. Rotate phone to landscape: stage auto-fills landscape viewport. */
+.community-game-player .player-stage--expanded{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);aspect-ratio:var(--game-aspect,16/9);height:auto;position:relative}
+.community-game-player .player-stage--expanded .player-screen{width:100%;height:100%;position:relative;inset:auto;transform:none;aspect-ratio:inherit}
+.community-game-player[data-orientation=portrait] .player-stage--expanded{aspect-ratio:9/16;max-height:85dvh;width:auto;height:85dvh;margin-left:auto;margin-right:auto}
+@media(orientation:landscape){.community-game-player .player-stage--expanded{width:min(100vw,calc(100dvh*16/9));height:min(100dvh,calc(100vw*9/16));margin-left:auto;margin-right:auto}
+.community-game-player[data-orientation=portrait] .player-stage--expanded{width:min(100vw,calc(100dvh*9/16));height:min(100dvh,calc(100vw*16/9));aspect-ratio:9/16}}
 @media(max-width:720px){.community-launch-cover .player-plush-mascot{display:none}.community-game-player[data-orientation=landscape] .player-center{padding:6px}.community-game-player[data-orientation=landscape] .player-center h2{font-size:17px;margin:0 0 3px}.community-game-player[data-orientation=landscape] .player-center p{font-size:12px;margin:0 0 5px}.community-game-player[data-orientation=landscape] .player-center button{padding:7px 12px;min-height:34px}.community-game-player[data-orientation=landscape] .community-play-anyway{margin-top:4px}}
 
 /* Landscape embeds need a useful CSS viewport even on a 390px upright phone.
