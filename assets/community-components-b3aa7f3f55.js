@@ -1,4 +1,4 @@
-import {createFullscreen} from './community-fullscreen-28602e80ed.js';
+import {createFullscreen} from './community-fullscreen-1bb8e78025.js';
 import {createViewport} from './community-viewport-2d7699e79e.js';
 import {createPlayerSession,ratioFor} from './community-player-session-f892e0c701.js';
 import {createApi,TOKEN_KEY,FAVORITES_KEY,uniqueIds,normalizeRating,gameSchema,serialQueue} from './community-client-a4074bc6ea.js';
