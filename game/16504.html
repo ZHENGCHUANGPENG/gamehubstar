@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#57b4f9" />
+    <script>
+      // Apply the saved palette before the app and stylesheet paint.
+      try { document.documentElement.dataset.theme = localStorage.getItem('gamehubstar-theme') === 'dark' ? 'dark' : 'light'; }
+      catch { document.documentElement.dataset.theme = 'light'; }
+      document.documentElement.style.colorScheme = document.documentElement.dataset.theme;
+      // Tint the browser's own top strip sky-blue so it blends with the page backdrop (day/night).
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', document.documentElement.dataset.theme === 'dark' ? '#182131' : '#57b4f9');
+    </script>
+    <meta name="description" content="A two-sided escape game on a tutorial map. A blue masked character waits in the left room and a red one in the right, each with its own arrow buttons, and " />
+    <link rel="canonical" href="https://gamehubstar.com/game/16504" />
+    <link rel="icon" type="image/png" href="/gamehubstar-icon.png" />
+    <link rel="preconnect" href="https://html5.gamemonetize.co" crossorigin />
+    <link rel="preconnect" href="https://img.gamemonetize.com" crossorigin />
+    <link rel="preconnect" href="https://api.gamehubstar.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.gamehubstar.com" />
+    <link rel="dns-prefetch" href="https://html5.gamemonetize.co" />
+    <script>
+      // Fire the homepage data request before the JS bundle even downloads, so the
+      // API round trip overlaps bundle download+parse. gameData.js picks up
+      // window.__bootstrapPromise instead of firing its own request.
+      // Skipped on deep-linked game pages (they don't need homepage data).
+      try {
+        if (!/^\/game\//.test(location.pathname) && !new URLSearchParams(location.search).get('game')) {
+          window.__bootstrapPromise = fetch('https://api.gamehubstar.com/api/bootstrap').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+        }
+      } catch (e) { window.__bootstrapPromise = null; }
+    </script>
+    <script>
+      // Prioritize the initial homepage illustration, without delaying deep-linked games.
+      if (location.pathname === '/' && !location.search) {
+        for (const href of ['/home-cat-character.webp', '/home-star-character.webp', matchMedia('(max-width:720px)').matches ? '/home-mobile-tall-sky.webp' : '/home-interactive-landscape.webp']) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = href; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <script>
+      // Start only the current banner character before React renders the page.
+      {
+        const query = new URLSearchParams(location.search);
+        const collections = {"recent":"/collection-recent-koala.webp","favorites":"/mascots/mascot-01.webp","action":"/mascots/mascot-02.webp","adventure":"/mascots/mascot-03.webp","arcade":"/mascots/mascot-04.webp","board":"/mascots/mascot-05.webp","card":"/mascots/mascot-06.webp","clicker":"/mascots/mascot-07.webp","driving":"/mascots/mascot-08.webp","io":"/mascots/mascot-09.webp","puzzle":"/mascots/mascot-10.webp","shooting":"/mascots/mascot-11.webp","simulation":"/mascots/mascot-12.webp","sports":"/mascots/mascot-13.webp","strategy":"/mascots/mascot-14.webp","trivia":"/mascots/mascot-15.webp","word":"/mascots/mascot-16.webp","multiplayer":"/mascots/mascot-17.webp","new":"/mascots/mascot-18.webp","hot":"/mascots/mascot-19.webp","updated":"/mascots/mascot-20.webp","originals":"/mascots/mascot-21.webp","leaderboard":"/mascots/mascot-22.webp","all":"/mascots/mascot-23.webp"};
+        const information = {"about":"/mascots/mascot-23.webp","privacy":"/mascots/mascot-14.webp","terms":"/mascots/mascot-10.webp","copyright":"/mascots/mascot-21.webp","contact":"/mascots/mascot-17.webp"};
+        const src = information[query.get('page')] || (query.get('collection') ? collections[query.get('value') || query.get('collection')] : null);
+        if (src) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = src; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <title>Masquerades vs impostors Online - Play Free impostor escape Game | GameHubStar</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD7HJKNP7P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PD7HJKNP7P');
+</script>
+  <script type="module" crossorigin src="/assets/index-device-945c274150.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-fGvT-Lwo.css">
+  <link rel="stylesheet" href="/assets/device-support-7d4d2065b2.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Masquerades vs impostors", "applicationCategory": "Game", "operatingSystem": "All", "url": "https://gamehubstar.com/game/16504", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "A two-sided escape game on a tutorial map. A blue masked character waits in the left room and a red one in the right, each with its own arrow buttons, and "}</script>
+</head>
+  <body>
+    <div id="root"><h1>Masquerades vs impostors Online</h1><p>The tutorial map shows two beige rooms side by side on a dark background, a blue masked character in the left room under the words Move with WASD and a red masked character in the right room under Move with Arrow Keys. Blue and red mask icons sit at the top next to a speaker and a pause button, a coin counter reads zero at the top left, and small yellow coins wait in each room. At the bottom, each side gets its own left and right arrow buttons with a blue jump button in the center. The listing describes masked characters escaping a spaceship where only same-color impostors can kill, plus zombies to watch for, and the two-room map with its color split matches that setup. The wide view keeps both rooms visible at once, and the touch buttons put both characters under the thumbs.</p><h2>How to Play</h2><p>With a desktop, move the blue character with WASD and the red one with the arrow keys, as the map itself says. On a phone, use the on-screen arrow buttons at the bottom, with the blue jump button in the center. Double jump is available.</p><h2>Tips</h2><ul><li>[&#x27;Only impostors of the same color can kill, mind the colors&#x27;, &#x27;Jump on enemies to kill them&#x27;, &#x27;Grab the small yellow coins in each room&#x27;, &#x27;The pause button sits next to the speaker at the top&#x27;]</li></ul></div>
+    <footer>
+      <nav aria-label="Browse games">
+        <a href="/games.html">All Games</a>
+        <a href="/?collection=category&amp;value=action">Action</a>
+        <a href="/?collection=category&amp;value=adventure">Adventure</a>
+        <a href="/?collection=category&amp;value=arcade">Arcade</a>
+        <a href="/?collection=category&amp;value=board">Board</a>
+        <a href="/?collection=category&amp;value=card">Card</a>
+        <a href="/?collection=category&amp;value=clicker">Clicker</a>
+        <a href="/?collection=category&amp;value=driving">Driving</a>
+        <a href="/?collection=category&amp;value=io">IO</a>
+        <a href="/?collection=category&amp;value=multiplayer">Multiplayer</a>
+        <a href="/?collection=category&amp;value=puzzle">Puzzle</a>
+        <a href="/?collection=category&amp;value=shooting">Shooting</a>
+        <a href="/?collection=category&amp;value=simulation">Simulation</a>
+        <a href="/?collection=category&amp;value=sports">Sports</a>
+        <a href="/?collection=category&amp;value=strategy">Strategy</a>
+        <a href="/?collection=category&amp;value=trivia">Trivia</a>
+        <a href="/?collection=category&amp;value=word">Word</a>
+        <a href="/?collection=special&amp;value=new">New</a>
+        <a href="/?collection=special&amp;value=hot">Hot</a>
+        <a href="/?collection=special&amp;value=updated">Updated</a>
+        <a href="/?collection=special&amp;value=originals">Originals</a>
+        <a href="/?collection=special&amp;value=leaderboard">Leaderboard</a>
+      </nav>
+    </footer>
+  </body>
+</html>
