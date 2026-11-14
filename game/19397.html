@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#57b4f9" />
+    <script>
+      // Apply the saved palette before the app and stylesheet paint.
+      try { document.documentElement.dataset.theme = localStorage.getItem('gamehubstar-theme') === 'dark' ? 'dark' : 'light'; }
+      catch { document.documentElement.dataset.theme = 'light'; }
+      document.documentElement.style.colorScheme = document.documentElement.dataset.theme;
+      // Tint the browser's own top strip sky-blue so it blends with the page backdrop (day/night).
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', document.documentElement.dataset.theme === 'dark' ? '#182131' : '#57b4f9');
+    </script>
+    <meta name="description" content="A pixel running game with a numbered level grid. The select screen shows Pixel Rush in green letters above green tiles numbered one upward, with a home but" />
+    <link rel="canonical" href="https://gamehubstar.com/game/19397" />
+    <link rel="icon" type="image/png" href="/gamehubstar-icon.png" />
+    <link rel="preconnect" href="https://html5.gamemonetize.co" crossorigin />
+    <link rel="preconnect" href="https://img.gamemonetize.com" crossorigin />
+    <link rel="preconnect" href="https://api.gamehubstar.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.gamehubstar.com" />
+    <link rel="dns-prefetch" href="https://html5.gamemonetize.co" />
+    <script>
+      // Fire the homepage data request before the JS bundle even downloads, so the
+      // API round trip overlaps bundle download+parse. gameData.js picks up
+      // window.__bootstrapPromise instead of firing its own request.
+      // Skipped on deep-linked game pages (they don't need homepage data).
+      try {
+        if (!/^\/game\//.test(location.pathname) && !new URLSearchParams(location.search).get('game')) {
+          window.__bootstrapPromise = fetch('https://api.gamehubstar.com/api/bootstrap').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+        }
+      } catch (e) { window.__bootstrapPromise = null; }
+    </script>
+    <script>
+      // Prioritize the initial homepage illustration, without delaying deep-linked games.
+      if (location.pathname === '/' && !location.search) {
+        for (const href of ['/home-cat-character.webp', '/home-star-character.webp', matchMedia('(max-width:720px)').matches ? '/home-mobile-tall-sky.webp' : '/home-interactive-landscape.webp']) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = href; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <script>
+      // Start only the current banner character before React renders the page.
+      {
+        const query = new URLSearchParams(location.search);
+        const collections = {"recent":"/collection-recent-koala.webp","favorites":"/mascots/mascot-01.webp","action":"/mascots/mascot-02.webp","adventure":"/mascots/mascot-03.webp","arcade":"/mascots/mascot-04.webp","board":"/mascots/mascot-05.webp","card":"/mascots/mascot-06.webp","clicker":"/mascots/mascot-07.webp","driving":"/mascots/mascot-08.webp","io":"/mascots/mascot-09.webp","puzzle":"/mascots/mascot-10.webp","shooting":"/mascots/mascot-11.webp","simulation":"/mascots/mascot-12.webp","sports":"/mascots/mascot-13.webp","strategy":"/mascots/mascot-14.webp","trivia":"/mascots/mascot-15.webp","word":"/mascots/mascot-16.webp","multiplayer":"/mascots/mascot-17.webp","new":"/mascots/mascot-18.webp","hot":"/mascots/mascot-19.webp","updated":"/mascots/mascot-20.webp","originals":"/mascots/mascot-21.webp","leaderboard":"/mascots/mascot-22.webp","all":"/mascots/mascot-23.webp"};
+        const information = {"about":"/mascots/mascot-23.webp","privacy":"/mascots/mascot-14.webp","terms":"/mascots/mascot-10.webp","copyright":"/mascots/mascot-21.webp","contact":"/mascots/mascot-17.webp"};
+        const src = information[query.get('page')] || (query.get('collection') ? collections[query.get('value') || query.get('collection')] : null);
+        if (src) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = src; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <title>Pixel Running Game Online - Play Free pixel run Game | GameHubStar</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD7HJKNP7P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PD7HJKNP7P');
+</script>
+  <script type="module" crossorigin src="/assets/index-device-945c274150.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-fGvT-Lwo.css">
+  <link rel="stylesheet" href="/assets/device-support-7d4d2065b2.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pixel Running Game", "applicationCategory": "Game", "operatingSystem": "All", "url": "https://gamehubstar.com/game/19397", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "A pixel running game with a numbered level grid. The select screen shows Pixel Rush in green letters above green tiles numbered one upward, with a home but"}</script>
+</head>
+  <body>
+    <div id="root"><h1>Pixel Running Game Online</h1><p>A dark screen holds a level grid of small green tiles, each one numbered, starting at one in the lower left and climbing across the rows, with a home button at the top and a bestgames.com mark at the base. Pixel Rush is written across the middle in bright green letters, and the tiles fill the space below it. The listing calls it a pixel boy who must avoid obstacles and reach the end of each level, and the numbered grid is the way the game hands out those levels one at a time. The portrait layout keeps the tiles large enough to tap and the numbers easy to read, and the first tile makes the starting point obvious. What showed was the grid and the title, and the running itself sits one tap past the first tile.</p><h2>How to Play</h2><p>On a computer, click a level tile, then use the mouse to control the pixel boy. On a phone, use a fingertip to tap a level tile and touch the screen to play, as the instructions word it: mouse or tap to play.</p><h2>Tips</h2><ul><li>[&#x27;Level 1 is the first green tile, start there&#x27;, &#x27;The numbered tiles open as earlier levels are finished&#x27;, &#x27;The home button at the top returns to the menu&#x27;, &#x27;Watch the tiles, the numbers climb as the levels get harder&#x27;]</li></ul></div>
+    <footer>
+      <nav aria-label="Browse games">
+        <a href="/games.html">All Games</a>
+        <a href="/?collection=category&amp;value=action">Action</a>
+        <a href="/?collection=category&amp;value=adventure">Adventure</a>
+        <a href="/?collection=category&amp;value=arcade">Arcade</a>
+        <a href="/?collection=category&amp;value=board">Board</a>
+        <a href="/?collection=category&amp;value=card">Card</a>
+        <a href="/?collection=category&amp;value=clicker">Clicker</a>
+        <a href="/?collection=category&amp;value=driving">Driving</a>
+        <a href="/?collection=category&amp;value=io">IO</a>
+        <a href="/?collection=category&amp;value=multiplayer">Multiplayer</a>
+        <a href="/?collection=category&amp;value=puzzle">Puzzle</a>
+        <a href="/?collection=category&amp;value=shooting">Shooting</a>
+        <a href="/?collection=category&amp;value=simulation">Simulation</a>
+        <a href="/?collection=category&amp;value=sports">Sports</a>
+        <a href="/?collection=category&amp;value=strategy">Strategy</a>
+        <a href="/?collection=category&amp;value=trivia">Trivia</a>
+        <a href="/?collection=category&amp;value=word">Word</a>
+        <a href="/?collection=special&amp;value=new">New</a>
+        <a href="/?collection=special&amp;value=hot">Hot</a>
+        <a href="/?collection=special&amp;value=updated">Updated</a>
+        <a href="/?collection=special&amp;value=originals">Originals</a>
+        <a href="/?collection=special&amp;value=leaderboard">Leaderboard</a>
+      </nav>
+    </footer>
+  </body>
+</html>
