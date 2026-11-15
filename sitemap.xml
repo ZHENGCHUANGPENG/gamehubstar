@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://gamehubstar.com/</loc></url>
 <url><loc>https://gamehubstar.com/games.html</loc></url>
+<url><loc>https://gamehubstar.com/about</loc></url>
+<url><loc>https://gamehubstar.com/contact</loc></url>
+<url><loc>https://gamehubstar.com/privacy</loc></url>
+<url><loc>https://gamehubstar.com/terms</loc></url>
 <url><loc>https://gamehubstar.com/?collection=category&amp;value=action</loc></url>
 <url><loc>https://gamehubstar.com/?collection=category&amp;value=adventure</loc></url>
 <url><loc>https://gamehubstar.com/?collection=category&amp;value=arcade</loc></url>
