@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#57b4f9" />
+    <script>
+      // Apply the saved palette before the app and stylesheet paint.
+      try { document.documentElement.dataset.theme = localStorage.getItem('gamehubstar-theme') === 'dark' ? 'dark' : 'light'; }
+      catch { document.documentElement.dataset.theme = 'light'; }
+      document.documentElement.style.colorScheme = document.documentElement.dataset.theme;
+      // Tint the browser's own top strip sky-blue so it blends with the page backdrop (day/night).
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', document.documentElement.dataset.theme === 'dark' ? '#182131' : '#57b4f9');
+    </script>
+    <meta name="description" content="A neon future-city driving game with a polished menu: CYBER CITY DRIVER in big outlined letters, a teal sports car with red details on a glowing pink grid," />
+    <link rel="canonical" href="https://gamehubstar.com/game/5405" />
+    <link rel="icon" type="image/png" href="/gamehubstar-icon.png" />
+    <link rel="preconnect" href="https://html5.gamemonetize.co" crossorigin />
+    <link rel="preconnect" href="https://img.gamemonetize.com" crossorigin />
+    <link rel="preconnect" href="https://api.gamehubstar.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.gamehubstar.com" />
+    <link rel="dns-prefetch" href="https://html5.gamemonetize.co" />
+    <script>
+      // Fire the homepage data request before the JS bundle even downloads, so the
+      // API round trip overlaps bundle download+parse. gameData.js picks up
+      // window.__bootstrapPromise instead of firing its own request.
+      // Skipped on deep-linked game pages (they don't need homepage data).
+      try {
+        if (!/^\/game\//.test(location.pathname) && !new URLSearchParams(location.search).get('game')) {
+          window.__bootstrapPromise = fetch('https://api.gamehubstar.com/api/bootstrap').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+        }
+      } catch (e) { window.__bootstrapPromise = null; }
+    </script>
+    <script>
+      // Prioritize the initial homepage illustration, without delaying deep-linked games.
+      if (location.pathname === '/' && !location.search) {
+        for (const href of ['/home-cat-character.webp', '/home-star-character.webp', matchMedia('(max-width:720px)').matches ? '/home-mobile-tall-sky.webp' : '/home-interactive-landscape.webp']) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = href; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <script>
+      // Start only the current banner character before React renders the page.
+      {
+        const query = new URLSearchParams(location.search);
+        const collections = {"recent":"/collection-recent-koala.webp","favorites":"/mascots/mascot-01.webp","action":"/mascots/mascot-02.webp","adventure":"/mascots/mascot-03.webp","arcade":"/mascots/mascot-04.webp","board":"/mascots/mascot-05.webp","card":"/mascots/mascot-06.webp","clicker":"/mascots/mascot-07.webp","driving":"/mascots/mascot-08.webp","io":"/mascots/mascot-09.webp","puzzle":"/mascots/mascot-10.webp","shooting":"/mascots/mascot-11.webp","simulation":"/mascots/mascot-12.webp","sports":"/mascots/mascot-13.webp","strategy":"/mascots/mascot-14.webp","trivia":"/mascots/mascot-15.webp","word":"/mascots/mascot-16.webp","multiplayer":"/mascots/mascot-17.webp","new":"/mascots/mascot-18.webp","hot":"/mascots/mascot-19.webp","updated":"/mascots/mascot-20.webp","originals":"/mascots/mascot-21.webp","leaderboard":"/mascots/mascot-22.webp","all":"/mascots/mascot-23.webp"};
+        const information = {"about":"/mascots/mascot-23.webp","privacy":"/mascots/mascot-14.webp","terms":"/mascots/mascot-10.webp","copyright":"/mascots/mascot-21.webp","contact":"/mascots/mascot-17.webp"};
+        const src = information[query.get('page')] || (query.get('collection') ? collections[query.get('value') || query.get('collection')] : null);
+        if (src) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = src; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <title>Cyber City Driver Online - Play Free cyber driving Game | GameHubStar</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD7HJKNP7P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PD7HJKNP7P');
+</script>
+  <script type="module" crossorigin src="/assets/index-device-945c274150.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-fGvT-Lwo.css">
+  <link rel="stylesheet" href="/assets/device-support-7d4d2065b2.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Cyber City Driver", "applicationCategory": "Game", "operatingSystem": "All", "url": "https://gamehubstar.com/game/5405", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "A neon future-city driving game with a polished menu: CYBER CITY DRIVER in big outlined letters, a teal sports car with red details on a glowing pink grid,"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How to play Cyber City Driver?", "acceptedAnswer": {"@type": "Answer", "text": "Player 1 drives with the arrow keys, N for nitro and B to look back; player 2 uses WASD, T for nitro and C to look back; R restarts the level, as the instructions list them. Open the game page and press Play to start."}}, {"@type": "Question", "name": "Is Cyber City Driver free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cyber City Driver is completely free to play on GameHubStar. You can play it in your browser with no download, no sign-up and no payment — just open the page and press Play."}}, {"@type": "Question", "name": "Can I play Cyber City Driver on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cyber City Driver needs a desktop or laptop computer with a keyboard and mouse, so it cannot be played on a phone or tablet."}}]}</script>
+</head>
+  <body>
+    <div id="root"><h1>Cyber City Driver Online</h1><p>The menu is a neon showroom. On the left, CYBER CITY DRIVER runs down the side in big outlined letters, CYBER CITY in white and DRIVER in pink below it, with three dark buttons underneath: RACING, FREE DRIVING and MORE STUNTS. On the right sits the car itself, a teal sports coupe with red trim and glowing red details, parked on a black floor marked with a pink grid, under a dark sky. A speaker icon sits at the top right, and a small credit at the bottom reads Made By RHM Interactive. The listing sets the game in a future city with a two-player mode, and the menu matches that promise exactly.</p><p>The driving is a two-player keyboard set. Player 1 drives with the arrow keys, N fires the nitro and B looks back, while player 2 uses WASD, T for nitro and C to look back, and R restarts the level. The two buttons on the menu set the shape of the session: RACING for a run against the clock and FREE DRIVING for a trip around the future city, with ramps in the listing that lead up to the roofs of buildings. Pick a mode, learn the nitro key, and the car does the rest.</p><p>The menu is the best part: the car looks fast standing still, the neon grid sells the future city, and the two modes are named on plain buttons. The trade-off is the keyboard, since a driving game with nitro and look-back keys has no touch scheme and belongs on a computer only, and the menu is the whole evidence seen, with no race on screen before a mode is picked. The MORE STUNTS button is a third option on the menu, but what it opens was not seen.</p><p>Driving fans who like a neon city and keyboard racers who want a two-player chase will enjoy this one. It is not built for a phone, and it will not suit players who want instant arcade racing with no keys to learn or the race itself on screen before picking a mode.</p><h2>How to Play</h2><p>Player 1 drives with the arrow keys, N for nitro and B to look back; player 2 uses WASD, T for nitro and C to look back; R restarts the level, as the instructions list them.</p><h2>Tips</h2><ul><li>[&#x27;Press RACING for a timed run, FREE DRIVING for a tour of the city&#x27;, &#x27;Save the nitro for the long straights, not the first corner&#x27;, &#x27;Use the look-back key to check what is behind the car&#x27;, &#x27;Press R to restart the level when a run goes wrong&#x27;]</li></ul><section class="game-faq" aria-label="Frequently asked questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><h3>How to play Cyber City Driver?</h3><p>Player 1 drives with the arrow keys, N for nitro and B to look back; player 2 uses WASD, T for nitro and C to look back; R restarts the level, as the instructions list them. Open the game page and press Play to start.</p></div><div class="faq-item"><h3>Is Cyber City Driver free?</h3><p>Yes. Cyber City Driver is completely free to play on GameHubStar. You can play it in your browser with no download, no sign-up and no payment — just open the page and press Play.</p></div><div class="faq-item"><h3>Can I play Cyber City Driver on mobile?</h3><p>No. Cyber City Driver needs a desktop or laptop computer with a keyboard and mouse, so it cannot be played on a phone or tablet.</p></div></section><nav class="explore-links" aria-label="Explore more"><span>Explore more:</span><a href="/?collection=category&amp;value=racing">More Racing games</a><a href="/?collection=special&amp;value=new">New Games</a><a href="/?collection=special&amp;value=hot">Trending Games</a><a href="/?collection=special&amp;value=updated">Recently Updated</a><a href="/?collection=special&amp;value=originals">Editor Picks</a><a href="/?collection=special&amp;value=leaderboard">Top Rated</a></nav></div>
+    <footer>
+      <nav aria-label="Browse games">
+        <a href="/games.html">All Games</a>
+        <a href="/?collection=category&amp;value=action">Action</a>
+        <a href="/?collection=category&amp;value=adventure">Adventure</a>
+        <a href="/?collection=category&amp;value=arcade">Arcade</a>
+        <a href="/?collection=category&amp;value=board">Board</a>
+        <a href="/?collection=category&amp;value=card">Card</a>
+        <a href="/?collection=category&amp;value=clicker">Clicker</a>
+        <a href="/?collection=category&amp;value=driving">Driving</a>
+        <a href="/?collection=category&amp;value=io">IO</a>
+        <a href="/?collection=category&amp;value=multiplayer">Multiplayer</a>
+        <a href="/?collection=category&amp;value=puzzle">Puzzle</a>
+        <a href="/?collection=category&amp;value=shooting">Shooting</a>
+        <a href="/?collection=category&amp;value=simulation">Simulation</a>
+        <a href="/?collection=category&amp;value=sports">Sports</a>
+        <a href="/?collection=category&amp;value=strategy">Strategy</a>
+        <a href="/?collection=category&amp;value=trivia">Trivia</a>
+        <a href="/?collection=category&amp;value=word">Word</a>
+        <a href="/?collection=special&amp;value=new">New</a>
+        <a href="/?collection=special&amp;value=hot">Hot</a>
+        <a href="/?collection=special&amp;value=updated">Updated</a>
+        <a href="/?collection=special&amp;value=originals">Originals</a>
+        <a href="/?collection=special&amp;value=leaderboard">Leaderboard</a>
+      </nav>
+      <nav aria-label="Site information">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </nav>
+    </footer>
+  </body>
+</html>
