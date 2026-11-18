@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#57b4f9" />
+    <script>
+      // Apply the saved palette before the app and stylesheet paint.
+      try { document.documentElement.dataset.theme = localStorage.getItem('gamehubstar-theme') === 'dark' ? 'dark' : 'light'; }
+      catch { document.documentElement.dataset.theme = 'light'; }
+      document.documentElement.style.colorScheme = document.documentElement.dataset.theme;
+      // Tint the browser's own top strip sky-blue so it blends with the page backdrop (day/night).
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', document.documentElement.dataset.theme === 'dark' ? '#182131' : '#57b4f9');
+    </script>
+    <meta name="description" content="A cartoon Formula 1 game that opens on a green open-wheel car with star hubs and a green-helmet driver, parked on a track with palm trees, grandstand seats" />
+    <link rel="canonical" href="https://gamehubstar.com/game/18516" />
+    <link rel="icon" type="image/png" href="/gamehubstar-icon.png" />
+    <link rel="preconnect" href="https://html5.gamemonetize.co" crossorigin />
+    <link rel="preconnect" href="https://img.gamemonetize.com" crossorigin />
+    <link rel="preconnect" href="https://api.gamehubstar.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.gamehubstar.com" />
+    <link rel="dns-prefetch" href="https://html5.gamemonetize.co" />
+    <script>
+      // Fire the homepage data request before the JS bundle even downloads, so the
+      // API round trip overlaps bundle download+parse. gameData.js picks up
+      // window.__bootstrapPromise instead of firing its own request.
+      // Skipped on deep-linked game pages (they don't need homepage data).
+      try {
+        if (!/^\/game\//.test(location.pathname) && !new URLSearchParams(location.search).get('game')) {
+          window.__bootstrapPromise = fetch('https://api.gamehubstar.com/api/bootstrap').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+        }
+      } catch (e) { window.__bootstrapPromise = null; }
+    </script>
+    <script>
+      // Prioritize the initial homepage illustration, without delaying deep-linked games.
+      if (location.pathname === '/' && !location.search) {
+        for (const href of ['/home-cat-character.webp', '/home-star-character.webp', matchMedia('(max-width:720px)').matches ? '/home-mobile-tall-sky.webp' : '/home-interactive-landscape.webp']) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = href; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <script>
+      // Start only the current banner character before React renders the page.
+      {
+        const query = new URLSearchParams(location.search);
+        const collections = {"recent":"/collection-recent-koala.webp","favorites":"/mascots/mascot-01.webp","action":"/mascots/mascot-02.webp","adventure":"/mascots/mascot-03.webp","arcade":"/mascots/mascot-04.webp","board":"/mascots/mascot-05.webp","card":"/mascots/mascot-06.webp","clicker":"/mascots/mascot-07.webp","driving":"/mascots/mascot-08.webp","io":"/mascots/mascot-09.webp","puzzle":"/mascots/mascot-10.webp","shooting":"/mascots/mascot-11.webp","simulation":"/mascots/mascot-12.webp","sports":"/mascots/mascot-13.webp","strategy":"/mascots/mascot-14.webp","trivia":"/mascots/mascot-15.webp","word":"/mascots/mascot-16.webp","multiplayer":"/mascots/mascot-17.webp","new":"/mascots/mascot-18.webp","hot":"/mascots/mascot-19.webp","updated":"/mascots/mascot-20.webp","originals":"/mascots/mascot-21.webp","leaderboard":"/mascots/mascot-22.webp","all":"/mascots/mascot-23.webp"};
+        const information = {"about":"/mascots/mascot-23.webp","privacy":"/mascots/mascot-14.webp","terms":"/mascots/mascot-10.webp","copyright":"/mascots/mascot-21.webp","contact":"/mascots/mascot-17.webp"};
+        const src = information[query.get('page')] || (query.get('collection') ? collections[query.get('value') || query.get('collection')] : null);
+        if (src) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = src; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <title>Formula 1 Driver Online - Play Free formula racing Game | GameHubStar</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD7HJKNP7P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PD7HJKNP7P');
+</script>
+  <script type="module" crossorigin src="/assets/index-device-945c274150.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-fGvT-Lwo.css">
+  <link rel="stylesheet" href="/assets/device-support-7d4d2065b2.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Formula 1 Driver", "applicationCategory": "Game", "operatingSystem": "All", "url": "https://gamehubstar.com/game/18516", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "A cartoon Formula 1 game that opens on a green open-wheel car with star hubs and a green-helmet driver, parked on a track with palm trees, grandstand seats"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How to play Formula 1 Driver?", "acceptedAnswer": {"@type": "Answer", "text": "【电脑专属，需键盘鼠标，手机无法操作】Steer with the arrow keys, the only control the instructions list. Click the big red play button on the right to start, and use the steering-wheel button beside it if the touch-style wheel is preferred. Open the game page and press Play to start."}}, {"@type": "Question", "name": "Is Formula 1 Driver free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Formula 1 Driver is completely free to play on GameHubStar. You can play it in your browser with no download, no sign-up and no payment — just open the page and press Play."}}, {"@type": "Question", "name": "Can I play Formula 1 Driver on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "No. Formula 1 Driver needs a desktop or laptop computer with a keyboard and mouse, so it cannot be played on a phone or tablet."}}]}</script>
+</head>
+  <body>
+    <div id="root"><h1>Formula 1 Driver Online</h1><p>The title screen is a bright cartoon race poster. A green open-wheel formula car with silver star hubs sits low on grey tarmac, its driver in a green helmet peering over the cockpit, while palm trees lean in from the left and grandstand seats rise behind a fence. FORMULA 1 DRIVER runs across the sky in red and white letters over a black paint splash, and red-white curbs edge the track above a strip of green grass. A big red play button with a white triangle sits on the right beside a smaller red steering-wheel button. The lower left carries a copyright line for FREEZE NOVA from 2021 with its website, and JulGames is written at the lower right. The listing pitches a formula racer where a car is customised and driven to first place against AI rivals across 30 levels.</p><p>The controls are a single line: arrow keys to control the car, which is all the instructions list, with the mouse used only to click the big red play button. That keeps the first minute simple, since the steering is the whole lesson and there is no gear, brake or boost key to memorise. The steering-wheel button beside play suggests a wheel option, but the keyboard arrows are the scheme the instructions name. Pick the play button, steer with the arrows, and learn the corners by feel.</p><p>The clean title is the best part: the green car, the palm trees and the grandstand read clearly in one glance, and the single red play button leaves no doubt where to click. What holds it back is how little the title shows of the racing itself, since there is no track choice, no car choice and no rival on view, so the customisation and the AI rivals the listing promises are still unproven from the screenshots. The copyright line also dates the game to 2021, so the art and the format feel older than the newest racers. The menu is a single poster with two buttons, which is charming but thin.</p><p>Formula racing fans who enjoy a simple keyboard setup and a quick start at a desk will like the clean title. Skip it for phone play, for players who want to see the car garage or the track list first, or for anyone who needs a tutorial before racing.</p><h2>How to Play</h2><p>【电脑专属，需键盘鼠标，手机无法操作】Steer with the arrow keys, the only control the instructions list. Click the big red play button on the right to start, and use the steering-wheel button beside it if the touch-style wheel is preferred. There is no other key to learn, so the whole game runs on four arrows and the mouse.</p><h2>Tips</h2><ul><li>[&#x27;Click the big red play button on the right, not the steering-wheel button beside it&#x27;, &#x27;Learn the arrow keys before the first corner, since the instructions list nothing else&#x27;, &#x27;Watch the red-white curbs at the track edge to judge where the road ends&#x27;, &#x27;Expect the listing’s car customisation and AI rivals to appear after play, since the title shows neither&#x27;]</li></ul><section class="game-faq" aria-label="Frequently asked questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><h3>How to play Formula 1 Driver?</h3><p>【电脑专属，需键盘鼠标，手机无法操作】Steer with the arrow keys, the only control the instructions list. Click the big red play button on the right to start, and use the steering-wheel button beside it if the touch-style wheel is preferred. Open the game page and press Play to start.</p></div><div class="faq-item"><h3>Is Formula 1 Driver free?</h3><p>Yes. Formula 1 Driver is completely free to play on GameHubStar. You can play it in your browser with no download, no sign-up and no payment — just open the page and press Play.</p></div><div class="faq-item"><h3>Can I play Formula 1 Driver on mobile?</h3><p>No. Formula 1 Driver needs a desktop or laptop computer with a keyboard and mouse, so it cannot be played on a phone or tablet.</p></div></section><nav class="explore-links" aria-label="Explore more"><span>Explore more:</span><a href="/?collection=category&amp;value=racing">More Racing games</a><a href="/?collection=special&amp;value=new">New Games</a><a href="/?collection=special&amp;value=hot">Trending Games</a><a href="/?collection=special&amp;value=updated">Recently Updated</a><a href="/?collection=special&amp;value=originals">Editor Picks</a><a href="/?collection=special&amp;value=leaderboard">Top Rated</a></nav></div>
+    <footer>
+      <nav aria-label="Browse games">
+        <a href="/games.html">All Games</a>
+        <a href="/?collection=category&amp;value=action">Action</a>
+        <a href="/?collection=category&amp;value=adventure">Adventure</a>
+        <a href="/?collection=category&amp;value=arcade">Arcade</a>
+        <a href="/?collection=category&amp;value=board">Board</a>
+        <a href="/?collection=category&amp;value=card">Card</a>
+        <a href="/?collection=category&amp;value=clicker">Clicker</a>
+        <a href="/?collection=category&amp;value=driving">Driving</a>
+        <a href="/?collection=category&amp;value=io">IO</a>
+        <a href="/?collection=category&amp;value=multiplayer">Multiplayer</a>
+        <a href="/?collection=category&amp;value=puzzle">Puzzle</a>
+        <a href="/?collection=category&amp;value=shooting">Shooting</a>
+        <a href="/?collection=category&amp;value=simulation">Simulation</a>
+        <a href="/?collection=category&amp;value=sports">Sports</a>
+        <a href="/?collection=category&amp;value=strategy">Strategy</a>
+        <a href="/?collection=category&amp;value=trivia">Trivia</a>
+        <a href="/?collection=category&amp;value=word">Word</a>
+        <a href="/?collection=special&amp;value=new">New</a>
+        <a href="/?collection=special&amp;value=hot">Hot</a>
+        <a href="/?collection=special&amp;value=updated">Updated</a>
+        <a href="/?collection=special&amp;value=originals">Originals</a>
+        <a href="/?collection=special&amp;value=leaderboard">Leaderboard</a>
+      </nav>
+      <nav aria-label="Site information">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </nav>
+    </footer>
+  </body>
+</html>
