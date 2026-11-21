@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#57b4f9" />
+    <script>
+      // Apply the saved palette before the app and stylesheet paint.
+      try { document.documentElement.dataset.theme = localStorage.getItem('gamehubstar-theme') === 'dark' ? 'dark' : 'light'; }
+      catch { document.documentElement.dataset.theme = 'light'; }
+      document.documentElement.style.colorScheme = document.documentElement.dataset.theme;
+      // Tint the browser's own top strip sky-blue so it blends with the page backdrop (day/night).
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', document.documentElement.dataset.theme === 'dark' ? '#182131' : '#57b4f9');
+    </script>
+    <meta name="description" content="Impostor Rush Rocket Launcher is a casual shooter where a small impostor with a rocket launcher must knock enemy soldiers off their towers. The title scree" />
+    <link rel="canonical" href="https://gamehubstar.com/game/20426" />
+    <link rel="icon" type="image/png" href="/gamehubstar-icon.png" />
+    <link rel="preconnect" href="https://html5.gamemonetize.co" crossorigin />
+    <link rel="preconnect" href="https://img.gamemonetize.com" crossorigin />
+    <link rel="preconnect" href="https://api.gamehubstar.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.gamehubstar.com" />
+    <link rel="dns-prefetch" href="https://html5.gamemonetize.co" />
+    <script>
+      // Fire the homepage data request before the JS bundle even downloads, so the
+      // API round trip overlaps bundle download+parse. gameData.js picks up
+      // window.__bootstrapPromise instead of firing its own request.
+      // Skipped on deep-linked game pages (they don't need homepage data).
+      try {
+        if (!/^\/game\//.test(location.pathname) && !new URLSearchParams(location.search).get('game')) {
+          window.__bootstrapPromise = fetch('https://api.gamehubstar.com/api/bootstrap').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+        }
+      } catch (e) { window.__bootstrapPromise = null; }
+    </script>
+    <script>
+      // Prioritize the initial homepage illustration, without delaying deep-linked games.
+      if (location.pathname === '/' && !location.search) {
+        for (const href of ['/home-cat-character.webp', '/home-star-character.webp', matchMedia('(max-width:720px)').matches ? '/home-mobile-tall-sky.webp' : '/home-interactive-landscape.webp']) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = href; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <script>
+      // Start only the current banner character before React renders the page.
+      {
+        const query = new URLSearchParams(location.search);
+        const collections = {"recent":"/collection-recent-koala.webp","favorites":"/mascots/mascot-01.webp","action":"/mascots/mascot-02.webp","adventure":"/mascots/mascot-03.webp","arcade":"/mascots/mascot-04.webp","board":"/mascots/mascot-05.webp","card":"/mascots/mascot-06.webp","clicker":"/mascots/mascot-07.webp","driving":"/mascots/mascot-08.webp","io":"/mascots/mascot-09.webp","puzzle":"/mascots/mascot-10.webp","shooting":"/mascots/mascot-11.webp","simulation":"/mascots/mascot-12.webp","sports":"/mascots/mascot-13.webp","strategy":"/mascots/mascot-14.webp","trivia":"/mascots/mascot-15.webp","word":"/mascots/mascot-16.webp","multiplayer":"/mascots/mascot-17.webp","new":"/mascots/mascot-18.webp","hot":"/mascots/mascot-19.webp","updated":"/mascots/mascot-20.webp","originals":"/mascots/mascot-21.webp","leaderboard":"/mascots/mascot-22.webp","all":"/mascots/mascot-23.webp"};
+        const information = {"about":"/mascots/mascot-23.webp","privacy":"/mascots/mascot-14.webp","terms":"/mascots/mascot-10.webp","copyright":"/mascots/mascot-21.webp","contact":"/mascots/mascot-17.webp"};
+        const src = information[query.get('page')] || (query.get('collection') ? collections[query.get('value') || query.get('collection')] : null);
+        if (src) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = src; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <title>Impostor Rush Rocket Launcher Online - Play Free impostor rush Game | GameHubStar</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD7HJKNP7P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PD7HJKNP7P');
+</script>
+  <script type="module" crossorigin src="/assets/index-device-945c274150.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-fGvT-Lwo.css">
+  <link rel="stylesheet" href="/assets/device-support-7d4d2065b2.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Impostor Rush Rocket Launcher", "applicationCategory": "Game", "operatingSystem": "All", "url": "https://gamehubstar.com/game/20426", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Impostor Rush Rocket Launcher is a casual shooter where a small impostor with a rocket launcher must knock enemy soldiers off their towers. The title scree"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How to play Impostor Rush Rocket Launcher?", "acceptedAnswer": {"@type": "Answer", "text": "On a computer, use the right mouse click to aim and shoot, as the listing instructs. On a phone, touch the screen to aim and release to shoot; the game is portrait, so the tower and the shooter both fit on an upright screen. Open the game page and press Play to start."}}, {"@type": "Question", "name": "Is Impostor Rush Rocket Launcher free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Impostor Rush Rocket Launcher is completely free to play on GameHubStar. You can play it in your browser with no download, no sign-up and no payment — just open the page and press Play."}}, {"@type": "Question", "name": "Can I play Impostor Rush Rocket Launcher on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Impostor Rush Rocket Launcher works on phones and tablets as well as on desktop. It is a portrait game, so it plays best held upright, using the touch controls."}}]}</script>
+</head>
+  <body>
+    <div id="root"><h1>Impostor Rush Rocket Launcher Online</h1><p>The title screen sets the scene in one picture: a big rocket launcher across the top, the words IMPOSTOR RUSH ROCKET LAUNCHER in blue and red, a blue PLAY button in the middle, and two impostor characters, one with a backpack standing on the ground with a red mark above his head, and one in dark blue standing on a tower with a gun. The listing says a little impostor is trying to escape while soldiers on the towers watch for anyone trying to get away, and the screen shows exactly that standoff. Pressing PLAY opens a city level with tall buildings under a sunset sky, a score counter reading zero at the top, and a coin counter beside it.</p><p>The shooting follows the listing: on a computer the right mouse click aims and fires, and on a phone you touch the screen to aim and release to shoot. That touch rule is what makes the game work on a phone, since the whole level is portrait and the tower stands within thumb’s reach. The title screen carries music and speaker buttons at the top, and a settings gear appears once the level starts. There are no other buttons to learn, so the first shot comes seconds after the first tap.</p><p>The best part is how fast the game gets to the point: title, PLAY, and you are aiming at a soldier on a tower. The sunset city looks bright and the two impostors read clearly against it, and the zeroed counters give the first hits something to build on. The weak spot is the narrowness of the first level: one soldier on one tower is the whole opening, and the game does not explain what the coins buy or how the escape continues. The portrait frame also squeezes the city into a tall strip on a computer screen.</p><p>Casual shooter fans and players who like quick aim-and-fire rounds will enjoy this. Players who want a long campaign or many weapons should look elsewhere.</p><h2>How to Play</h2><p>On a computer, use the right mouse click to aim and shoot, as the listing instructs. On a phone, touch the screen to aim and release to shoot; the game is portrait, so the tower and the shooter both fit on an upright screen. Press PLAY on the title screen to start, and use the music and speaker icons at the top to change the sound. A settings gear appears at the top of the level once play begins.</p><h2>Tips</h2><ul><li>[&#x27;Aim at the soldier on the tower before he gets a shot off&#x27;, &#x27;Watch the angle of the shot, since the rocket has to reach a target standing above you&#x27;, &#x27;Check the coin counter at the top after each hit to see what you earned&#x27;, &#x27;Use the settings gear in the level if the sound or music gets in the way&#x27;]</li></ul><section class="game-faq" aria-label="Frequently asked questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><h3>How to play Impostor Rush Rocket Launcher?</h3><p>On a computer, use the right mouse click to aim and shoot, as the listing instructs. On a phone, touch the screen to aim and release to shoot; the game is portrait, so the tower and the shooter both fit on an upright screen. Open the game page and press Play to start.</p></div><div class="faq-item"><h3>Is Impostor Rush Rocket Launcher free?</h3><p>Yes. Impostor Rush Rocket Launcher is completely free to play on GameHubStar. You can play it in your browser with no download, no sign-up and no payment — just open the page and press Play.</p></div><div class="faq-item"><h3>Can I play Impostor Rush Rocket Launcher on mobile?</h3><p>Yes. Impostor Rush Rocket Launcher works on phones and tablets as well as on desktop. It is a portrait game, so it plays best held upright, using the touch controls.</p></div></section><nav class="explore-links" aria-label="Explore more"><span>Explore more:</span><a href="/?collection=category&amp;value=shooting">More Shooting games</a><a href="/?collection=special&amp;value=new">New Games</a><a href="/?collection=special&amp;value=hot">Trending Games</a><a href="/?collection=special&amp;value=updated">Recently Updated</a><a href="/?collection=special&amp;value=originals">Editor Picks</a><a href="/?collection=special&amp;value=leaderboard">Top Rated</a></nav></div>
+    <footer>
+      <nav aria-label="Browse games">
+        <a href="/games.html">All Games</a>
+        <a href="/?collection=category&amp;value=action">Action</a>
+        <a href="/?collection=category&amp;value=adventure">Adventure</a>
+        <a href="/?collection=category&amp;value=arcade">Arcade</a>
+        <a href="/?collection=category&amp;value=board">Board</a>
+        <a href="/?collection=category&amp;value=card">Card</a>
+        <a href="/?collection=category&amp;value=clicker">Clicker</a>
+        <a href="/?collection=category&amp;value=driving">Driving</a>
+        <a href="/?collection=category&amp;value=io">IO</a>
+        <a href="/?collection=category&amp;value=multiplayer">Multiplayer</a>
+        <a href="/?collection=category&amp;value=puzzle">Puzzle</a>
+        <a href="/?collection=category&amp;value=shooting">Shooting</a>
+        <a href="/?collection=category&amp;value=simulation">Simulation</a>
+        <a href="/?collection=category&amp;value=sports">Sports</a>
+        <a href="/?collection=category&amp;value=strategy">Strategy</a>
+        <a href="/?collection=category&amp;value=trivia">Trivia</a>
+        <a href="/?collection=category&amp;value=word">Word</a>
+        <a href="/?collection=special&amp;value=new">New</a>
+        <a href="/?collection=special&amp;value=hot">Hot</a>
+        <a href="/?collection=special&amp;value=updated">Updated</a>
+        <a href="/?collection=special&amp;value=originals">Originals</a>
+        <a href="/?collection=special&amp;value=leaderboard">Leaderboard</a>
+      </nav>
+      <nav aria-label="Site information">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </nav>
+    </footer>
+  </body>
+</html>
