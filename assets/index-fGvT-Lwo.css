@@ -14,3 +14,7 @@
 [data-theme=dark] .plush-game .game-faq-card:after{border-color:#60718a}
 [data-theme=dark] .plush-game .game-faq-card>.editorial-number{color:#f0e8dc;background:#47657e;border-color:#93afc1;box-shadow:0 0 0 2px #35465e,0 3px 4px #080f1c33}
 [data-theme=dark] .plush-game .game-faq-card summary h2,[data-theme=dark] .plush-game .game-faq-card .faq-toggle-icon{color:var(--night-text);text-shadow:none}
+
+/* FAQ card questions: h3 must be dark on the cream card (2026-11-22 fix: global h3 rules render white, unreadable) */
+.game-faq-card .faq-item h3{color:#693319}
+[data-theme=dark] .game-faq-card .faq-item h3{color:var(--night-text)}
