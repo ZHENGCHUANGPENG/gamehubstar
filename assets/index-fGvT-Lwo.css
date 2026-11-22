@@ -26,3 +26,14 @@
 .collection-body p:last-child{margin-bottom:0}
 [data-theme=dark] .collection-body{background:var(--night-surface);border-color:var(--night-border);box-shadow:none}
 [data-theme=dark] .collection-body h2,[data-theme=dark] .collection-body p{color:var(--night-text)}
+
+/* Scenario specials collapsible sidebar group (2026-11-22) */
+.nav-group button svg.ghs-scen-chevron{display:none;flex:0 0 19px;transition:transform .15s}
+.sidebar--open .nav-group button svg.ghs-scen-chevron,.sidebar:hover .nav-group button svg.ghs-scen-chevron{display:block}
+.ghs-scen-toggle[aria-expanded="true"] svg.ghs-scen-chevron{transform:rotate(90deg)}
+.nav-group a.ghs-scen-viewall{display:none;align-items:center;gap:14px;height:38px;padding:0 15px;border-radius:10px;color:#9795a5;font-size:13px;font-weight:700}
+.sidebar--open .nav-group a.ghs-scen-viewall,.sidebar:hover .nav-group a.ghs-scen-viewall{display:flex}
+.nav-group a.ghs-scen-viewall:hover{color:#fff}
+.plush-home .nav-group a.ghs-scen-viewall{height:45px;color:#6b422d}
+.plush-home .nav-group a.ghs-scen-viewall:hover{background-color:#def2fb;color:#6b422d}
+[data-theme="dark"] .plush-home .nav-group a.ghs-scen-viewall{color:var(--night-text)}
