@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#57b4f9" />
+    <script>
+      // Apply the saved palette before the app and stylesheet paint.
+      try { document.documentElement.dataset.theme = localStorage.getItem('gamehubstar-theme') === 'dark' ? 'dark' : 'light'; }
+      catch { document.documentElement.dataset.theme = 'light'; }
+      document.documentElement.style.colorScheme = document.documentElement.dataset.theme;
+      // Tint the browser's own top strip sky-blue so it blends with the page backdrop (day/night).
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', document.documentElement.dataset.theme === 'dark' ? '#182131' : '#57b4f9');
+    </script>
+    <meta name="description" content="UNO Card Game is the classic card game with a friendly setup: pick one of six cartoon avatars, type a name, and choose VS COMPUTER for a solo match or ONLI" />
+    <link rel="canonical" href="https://gamehubstar.com/game/7231" />
+    <link rel="icon" type="image/png" href="/gamehubstar-icon.png" />
+    <link rel="preconnect" href="https://html5.gamemonetize.co" crossorigin />
+    <link rel="preconnect" href="https://img.gamemonetize.com" crossorigin />
+    <link rel="preconnect" href="https://api.gamehubstar.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.gamehubstar.com" />
+    <link rel="dns-prefetch" href="https://html5.gamemonetize.co" />
+    <script>
+      // Fire the homepage data request before the JS bundle even downloads, so the
+      // API round trip overlaps bundle download+parse. gameData.js picks up
+      // window.__bootstrapPromise instead of firing its own request.
+      // Skipped on deep-linked game pages (they don't need homepage data).
+      try {
+        if (!/^\/game\//.test(location.pathname) && !new URLSearchParams(location.search).get('game')) {
+          window.__bootstrapPromise = fetch('https://api.gamehubstar.com/api/bootstrap').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+        }
+      } catch (e) { window.__bootstrapPromise = null; }
+    </script>
+    <script>
+      // Prioritize the initial homepage illustration, without delaying deep-linked games.
+      if (location.pathname === '/' && !location.search) {
+        for (const href of ['/home-cat-character.webp', '/home-star-character.webp', matchMedia('(max-width:720px)').matches ? '/home-mobile-tall-sky.webp' : '/home-interactive-landscape.webp']) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = href; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <script>
+      // Start only the current banner character before React renders the page.
+      {
+        const query = new URLSearchParams(location.search);
+        const collections = {"recent":"/collection-recent-koala.webp","favorites":"/mascots/mascot-01.webp","action":"/mascots/mascot-02.webp","adventure":"/mascots/mascot-03.webp","arcade":"/mascots/mascot-04.webp","board":"/mascots/mascot-05.webp","card":"/mascots/mascot-06.webp","clicker":"/mascots/mascot-07.webp","driving":"/mascots/mascot-08.webp","io":"/mascots/mascot-09.webp","puzzle":"/mascots/mascot-10.webp","shooting":"/mascots/mascot-11.webp","simulation":"/mascots/mascot-12.webp","sports":"/mascots/mascot-13.webp","strategy":"/mascots/mascot-14.webp","trivia":"/mascots/mascot-15.webp","word":"/mascots/mascot-16.webp","multiplayer":"/mascots/mascot-17.webp","new":"/mascots/mascot-18.webp","hot":"/mascots/mascot-19.webp","updated":"/mascots/mascot-20.webp","originals":"/mascots/mascot-21.webp","leaderboard":"/mascots/mascot-22.webp","all":"/mascots/mascot-23.webp"};
+        const information = {"about":"/mascots/mascot-23.webp","privacy":"/mascots/mascot-14.webp","terms":"/mascots/mascot-10.webp","copyright":"/mascots/mascot-21.webp","contact":"/mascots/mascot-17.webp"};
+        const src = information[query.get('page')] || (query.get('collection') ? collections[query.get('value') || query.get('collection')] : null);
+        if (src) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = src; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <title>UNO Card Game Online - Play Free uno buddies Game | GameHubStar</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD7HJKNP7P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PD7HJKNP7P');
+</script>
+  <script type="module" crossorigin src="/assets/index-device-945c274150.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-fGvT-Lwo.css">
+  <link rel="stylesheet" href="/assets/device-support-7d4d2065b2.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "UNO Card Game", "applicationCategory": "Game", "operatingSystem": "All", "url": "https://gamehubstar.com/game/7231", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "UNO Card Game is the classic card game with a friendly setup: pick one of six cartoon avatars, type a name, and choose VS COMPUTER for a solo match or ONLI"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How to play UNO Card Game?", "acceptedAnswer": {"@type": "Answer", "text": "Computer players click one of the six avatars, click the name field and type a name, click the green CONTINUE button, then click VS COMPUTER or ONLINE MULTIPLAYER. Phone players tap the same spots and hold the phone sideways, since the profile and lobby are built for a wide screen and the profile is cropped on an upright phone. Open the game page and press Play to start."}}, {"@type": "Question", "name": "Is UNO Card Game free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. UNO Card Game is completely free to play on GameHubStar. You can play it in your browser with no download, no sign-up and no payment — just open the page and press Play."}}, {"@type": "Question", "name": "Can I play UNO Card Game on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. UNO Card Game works on phones and tablets as well as on desktop. Rotate your phone sideways for the full view, and use the touch controls to play."}}]}</script>
+</head>
+  <body>
+    <div id="root"><h1>UNO Card Game Online</h1><p>UNO Card Game is the classic card game, and it starts with a bit of dressing up. The opening screen is a purple profile page with six cartoon superhero avatars to choose from, a field to enter a name, and a green CONTINUE button. Once the profile is set, the lobby shows the big UNO WITH BUDDIES logo, the chosen avatar and name in the corner, and two green buttons: VS COMPUTER and ONLINE MULTIPLAYER. The listing calls it simple to learn with some strategic depth, and the lobby matches that idea: pick a mode and the match begins.</p><p>The controls are clicks and taps. Computer players click an avatar, click the name field and type a name, click CONTINUE, then click VS COMPUTER for a solo match or ONLINE MULTIPLAYER to play with others. Phone players tap the same spots and hold the phone sideways, since the profile and lobby are built for a wide screen and the profile is cropped on an upright phone. The game is a slow Unity load, so the screen can stay black for half a minute on a phone before the profile appears.</p><p>The best part is the setup itself: choosing an avatar and a name takes seconds and makes the lobby feel personal, and having both a computer mode and an online mode on the same screen is handy. What holds it back is the wait and the ads. The black loading screen is long on a phone, an ad grid appears between the profile and the lobby on a computer, and the profile asks for a name before CONTINUE will work, which is not obvious at first. The match itself only starts after the mode choice, so the first minute is setup rather than cards.</p><p>UNO fans and casual card players who want a quick match against the computer or online will enjoy it. Players who want to be dealt in immediately should expect a minute of setup first.</p><h2>How to Play</h2><p>Computer players click one of the six avatars, click the name field and type a name, click the green CONTINUE button, then click VS COMPUTER or ONLINE MULTIPLAYER. Phone players tap the same spots and hold the phone sideways, since the profile and lobby are built for a wide screen and the profile is cropped on an upright phone. The game is a slow Unity load, so the screen can stay black for half a minute on a phone before the profile appears.</p><h2>Tips</h2><ul><li>[&#x27;Wait out the black loading screen, since the Unity game takes a while to start on a phone&#x27;, &#x27;Pick an avatar and type a name before pressing CONTINUE&#x27;, &#x27;Start with VS COMPUTER to learn the flow before trying online play&#x27;, &#x27;Hold the phone sideways, since the game is built for a wide screen&#x27;]</li></ul><section class="game-faq" aria-label="Frequently asked questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><h3>How to play UNO Card Game?</h3><p>Computer players click one of the six avatars, click the name field and type a name, click the green CONTINUE button, then click VS COMPUTER or ONLINE MULTIPLAYER. Phone players tap the same spots and hold the phone sideways, since the profile and lobby are built for a wide screen and the profile is cropped on an upright phone. Open the game page and press Play to start.</p></div><div class="faq-item"><h3>Is UNO Card Game free?</h3><p>Yes. UNO Card Game is completely free to play on GameHubStar. You can play it in your browser with no download, no sign-up and no payment — just open the page and press Play.</p></div><div class="faq-item"><h3>Can I play UNO Card Game on mobile?</h3><p>Yes. UNO Card Game works on phones and tablets as well as on desktop. Rotate your phone sideways for the full view, and use the touch controls to play.</p></div></section><nav class="explore-links" aria-label="Explore more"><span>Explore more:</span><a href="/?collection=category&amp;value=card">More Card games</a><a href="/?collection=special&amp;value=new">New Games</a><a href="/?collection=special&amp;value=hot">Trending Games</a><a href="/?collection=special&amp;value=updated">Recently Updated</a><a href="/?collection=special&amp;value=originals">Editor Picks</a><a href="/?collection=special&amp;value=leaderboard">Top Rated</a></nav></div>
+    <footer>
+      <nav aria-label="Browse games">
+        <a href="/games.html">All Games</a>
+        <a href="/?collection=category&amp;value=action">Action</a>
+        <a href="/?collection=category&amp;value=adventure">Adventure</a>
+        <a href="/?collection=category&amp;value=arcade">Arcade</a>
+        <a href="/?collection=category&amp;value=board">Board</a>
+        <a href="/?collection=category&amp;value=card">Card</a>
+        <a href="/?collection=category&amp;value=clicker">Clicker</a>
+        <a href="/?collection=category&amp;value=driving">Driving</a>
+        <a href="/?collection=category&amp;value=io">IO</a>
+        <a href="/?collection=category&amp;value=multiplayer">Multiplayer</a>
+        <a href="/?collection=category&amp;value=puzzle">Puzzle</a>
+        <a href="/?collection=category&amp;value=shooting">Shooting</a>
+        <a href="/?collection=category&amp;value=simulation">Simulation</a>
+        <a href="/?collection=category&amp;value=sports">Sports</a>
+        <a href="/?collection=category&amp;value=strategy">Strategy</a>
+        <a href="/?collection=category&amp;value=trivia">Trivia</a>
+        <a href="/?collection=category&amp;value=word">Word</a>
+        <a href="/?collection=special&amp;value=new">New</a>
+        <a href="/?collection=special&amp;value=hot">Hot</a>
+        <a href="/?collection=special&amp;value=updated">Updated</a>
+        <a href="/?collection=special&amp;value=originals">Originals</a>
+        <a href="/?collection=special&amp;value=leaderboard">Leaderboard</a>
+      </nav>
+      <nav aria-label="Site information">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </nav>
+    </footer>
+  </body>
+</html>
