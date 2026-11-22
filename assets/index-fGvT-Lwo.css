@@ -18,3 +18,11 @@
 /* FAQ card questions: h3 must be dark on the cream card (2026-11-22 fix: global h3 rules render white, unreadable) */
 .game-faq-card .faq-item h3{color:#693319}
 [data-theme=dark] .game-faq-card .faq-item h3{color:var(--night-text)}
+
+/* Scenario special body text (2026-11-22): editorial intro under the collection header */
+.collection-body{background:#fff6e7;border:3px solid #fffdf6;border-radius:18px;padding:20px 22px;margin:2px 0 24px;box-shadow:0 2px 0 #f3e3c8}
+.collection-body h2{color:#693319;margin:0 0 10px;font-size:20px}
+.collection-body p{color:#5b3a22;line-height:1.7;margin:0 0 12px;font-size:15px}
+.collection-body p:last-child{margin-bottom:0}
+[data-theme=dark] .collection-body{background:var(--night-surface);border-color:var(--night-border);box-shadow:none}
+[data-theme=dark] .collection-body h2,[data-theme=dark] .collection-body p{color:var(--night-text)}
