@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#57b4f9" />
+    <script>
+      // Apply the saved palette before the app and stylesheet paint.
+      try { document.documentElement.dataset.theme = localStorage.getItem('gamehubstar-theme') === 'dark' ? 'dark' : 'light'; }
+      catch { document.documentElement.dataset.theme = 'light'; }
+      document.documentElement.style.colorScheme = document.documentElement.dataset.theme;
+      // Tint the browser's own top strip sky-blue so it blends with the page backdrop (day/night).
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', document.documentElement.dataset.theme === 'dark' ? '#182131' : '#57b4f9');
+    </script>
+    <meta name="description" content="Stickman Parkours is a running and jumping game about a brave stickman facing levels filled with traps. The title screen shows a big STICKMAN PARKOUR logo " />
+    <link rel="canonical" href="https://gamehubstar.com/game/17030" />
+    <link rel="icon" type="image/png" href="/gamehubstar-icon.png" />
+    <link rel="preconnect" href="https://html5.gamemonetize.co" crossorigin />
+    <link rel="preconnect" href="https://img.gamemonetize.com" crossorigin />
+    <link rel="preconnect" href="https://api.gamehubstar.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.gamehubstar.com" />
+    <link rel="dns-prefetch" href="https://html5.gamemonetize.co" />
+    <script>
+      // Fire the homepage data request before the JS bundle even downloads, so the
+      // API round trip overlaps bundle download+parse. gameData.js picks up
+      // window.__bootstrapPromise instead of firing its own request.
+      // Skipped on deep-linked game pages (they don't need homepage data).
+      try {
+        if (!/^\/game\//.test(location.pathname) && !new URLSearchParams(location.search).get('game')) {
+          window.__bootstrapPromise = fetch('https://api.gamehubstar.com/api/bootstrap').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+        }
+      } catch (e) { window.__bootstrapPromise = null; }
+    </script>
+    <script>
+      // Prioritize the initial homepage illustration, without delaying deep-linked games.
+      if (location.pathname === '/' && !location.search) {
+        for (const href of ['/home-cat-character.webp', '/home-star-character.webp', matchMedia('(max-width:720px)').matches ? '/home-mobile-tall-sky.webp' : '/home-interactive-landscape.webp']) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = href; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <script>
+      // Start only the current banner character before React renders the page.
+      {
+        const query = new URLSearchParams(location.search);
+        const collections = {"recent":"/collection-recent-koala.webp","favorites":"/mascots/mascot-01.webp","action":"/mascots/mascot-02.webp","adventure":"/mascots/mascot-03.webp","arcade":"/mascots/mascot-04.webp","board":"/mascots/mascot-05.webp","card":"/mascots/mascot-06.webp","clicker":"/mascots/mascot-07.webp","driving":"/mascots/mascot-08.webp","io":"/mascots/mascot-09.webp","puzzle":"/mascots/mascot-10.webp","shooting":"/mascots/mascot-11.webp","simulation":"/mascots/mascot-12.webp","sports":"/mascots/mascot-13.webp","strategy":"/mascots/mascot-14.webp","trivia":"/mascots/mascot-15.webp","word":"/mascots/mascot-16.webp","multiplayer":"/mascots/mascot-17.webp","new":"/mascots/mascot-18.webp","hot":"/mascots/mascot-19.webp","updated":"/mascots/mascot-20.webp","originals":"/mascots/mascot-21.webp","leaderboard":"/mascots/mascot-22.webp","all":"/mascots/mascot-23.webp"};
+        const information = {"about":"/mascots/mascot-23.webp","privacy":"/mascots/mascot-14.webp","terms":"/mascots/mascot-10.webp","copyright":"/mascots/mascot-21.webp","contact":"/mascots/mascot-17.webp"};
+        const src = information[query.get('page')] || (query.get('collection') ? collections[query.get('value') || query.get('collection')] : null);
+        if (src) {
+          const link = document.createElement('link');
+          link.rel = 'preload'; link.as = 'image'; link.type = 'image/webp';
+          link.href = src; link.fetchPriority = 'high'; document.head.appendChild(link);
+        }
+      }
+    </script>
+    <title>Stickman Parkours Online - Play Free parkour runner Game | GameHubStar</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD7HJKNP7P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PD7HJKNP7P');
+</script>
+  <script type="module" crossorigin src="/assets/index-device-945c274150.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-fGvT-Lwo.css">
+  <link rel="stylesheet" href="/assets/device-support-7d4d2065b2.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Stickman Parkours", "applicationCategory": "Game", "operatingSystem": "All", "url": "https://gamehubstar.com/game/17030", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Stickman Parkours is a running and jumping game about a brave stickman facing levels filled with traps. The title screen shows a big STICKMAN PARKOUR logo "}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How to play Stickman Parkours?", "acceptedAnswer": {"@type": "Answer", "text": "On a computer, use the arrow keys to move and jump, or use A and D to move and S to jump; press D several times to climb. On a phone, tap the blue START button on the title screen, then tap level 1 on the level select — the level tiles answer taps the same way a mouse click does. Open the game page and press Play to start."}}, {"@type": "Question", "name": "Is Stickman Parkours free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Stickman Parkours is completely free to play on GameHubStar. You can play it in your browser with no download, no sign-up and no payment — just open the page and press Play."}}, {"@type": "Question", "name": "Can I play Stickman Parkours on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Stickman Parkours works on phones and tablets as well as on desktop. Rotate your phone sideways for the full view, and use the touch controls to play."}}]}</script>
+</head>
+  <body>
+    <div id="root"><h1>Stickman Parkours Online</h1><p>Stickman Parkours is a running and jumping game, and its title screen says so in one look: a big blue STICKMAN PARKOUR logo with a star in the middle, a blue START button below it, grey pentagons scattered around and a HYHYGAMES mark at the top. The description promises a brave stickman, challenging levels filled with devious traps, acrobatic moves and gems to earn. Tapping START opens a level select with ten tiles in two rows — level 1 is blue and open, the rest carry padlocks — and a HOME button waits below the grid.</p><p>The controls are two schemes for the same moves. On a computer, the arrow keys move and jump, or A and D move while S jumps; pressing D several times climbs. On a phone, the path in is a tap on START and a tap on level 1, and the level tiles answer taps the same way a mouse click does. The setup is quick: title, START, level select, and then the run. Nothing else sits on the title screen, so there is no menu to get lost in.</p><p>The clearest strength is the honest level select. Ten tiles, one open and nine locked, tell the player exactly how much road lies ahead before the first jump. The title art is also direct: the logo, the star and the START button leave no doubt about what the game is. The limit is the evidence: the run itself was not observed, so the traps, the achievements and the gems are the developer&#x27;s description rather than something testing saw. The game is also keyboard-first on a computer, with the phone path limited to taps.</p><p>Good for parkour and runner fans who like short attempts at one level at a time, and for anyone after a simple arcade game on a phone or a computer. It suits quick sessions where the goal is to open the next tile.</p><h2>How to Play</h2><p>On a computer, use the arrow keys to move and jump, or use A and D to move and S to jump; press D several times to climb. On a phone, tap the blue START button on the title screen, then tap level 1 on the level select — the level tiles answer taps the same way a mouse click does. The title screen carries no other buttons, so START is the only way in.</p><h2>Tips</h2><ul><li>[&#x27;Tap level 1 first, since the other nine tiles are locked until earlier levels are cleared&#x27;, &#x27;Use the arrow keys or A and D on a computer, and S for the jump — both schemes do the same job&#x27;, &#x27;Press D several times when a wall needs climbing, instead of tapping jump once and hoping&#x27;, &#x27;Read the level select before starting, because the locked tiles show how far the run goes&#x27;]</li></ul><section class="game-faq" aria-label="Frequently asked questions"><h2>Frequently Asked Questions</h2><div class="faq-item"><h3>How to play Stickman Parkours?</h3><p>On a computer, use the arrow keys to move and jump, or use A and D to move and S to jump; press D several times to climb. On a phone, tap the blue START button on the title screen, then tap level 1 on the level select — the level tiles answer taps the same way a mouse click does. Open the game page and press Play to start.</p></div><div class="faq-item"><h3>Is Stickman Parkours free?</h3><p>Yes. Stickman Parkours is completely free to play on GameHubStar. You can play it in your browser with no download, no sign-up and no payment — just open the page and press Play.</p></div><div class="faq-item"><h3>Can I play Stickman Parkours on mobile?</h3><p>Yes. Stickman Parkours works on phones and tablets as well as on desktop. Rotate your phone sideways for the full view, and use the touch controls to play.</p></div></section><nav class="explore-links" aria-label="Explore more"><span>Explore more:</span><a href="/?collection=category&amp;value=arcade">More Arcade games</a><a href="/?collection=special&amp;value=new">New Games</a><a href="/?collection=special&amp;value=hot">Trending Games</a><a href="/?collection=special&amp;value=updated">Recently Updated</a><a href="/?collection=special&amp;value=originals">Editor Picks</a><a href="/?collection=special&amp;value=leaderboard">Top Rated</a></nav></div>
+    <footer>
+      <nav aria-label="Browse games">
+        <a href="/games.html">All Games</a>
+        <a href="/?collection=category&amp;value=action">Action</a>
+        <a href="/?collection=category&amp;value=adventure">Adventure</a>
+        <a href="/?collection=category&amp;value=arcade">Arcade</a>
+        <a href="/?collection=category&amp;value=board">Board</a>
+        <a href="/?collection=category&amp;value=card">Card</a>
+        <a href="/?collection=category&amp;value=clicker">Clicker</a>
+        <a href="/?collection=category&amp;value=driving">Driving</a>
+        <a href="/?collection=category&amp;value=io">IO</a>
+        <a href="/?collection=category&amp;value=multiplayer">Multiplayer</a>
+        <a href="/?collection=category&amp;value=puzzle">Puzzle</a>
+        <a href="/?collection=category&amp;value=shooting">Shooting</a>
+        <a href="/?collection=category&amp;value=simulation">Simulation</a>
+        <a href="/?collection=category&amp;value=sports">Sports</a>
+        <a href="/?collection=category&amp;value=strategy">Strategy</a>
+        <a href="/?collection=category&amp;value=trivia">Trivia</a>
+        <a href="/?collection=category&amp;value=word">Word</a>
+        <a href="/?collection=special&amp;value=new">New</a>
+        <a href="/?collection=special&amp;value=hot">Hot</a>
+        <a href="/?collection=special&amp;value=updated">Updated</a>
+        <a href="/?collection=special&amp;value=originals">Originals</a>
+        <a href="/?collection=special&amp;value=leaderboard">Leaderboard</a>
+      </nav>
+      <nav aria-label="Site information">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </nav>
+    </footer>
+  </body>
+</html>
